@@ -16,8 +16,8 @@
 git clone https://github.com/clxakz/stormfield/
 ```
 
-## Usage
-**In your main.py** <br/>
+## Example Usage
+### In your main.py
 ```python
 import pygame
 from stormfield import World
@@ -47,5 +47,42 @@ while running:
 
     pygame.display.flip()
 pygame.quit()
+```
 
+### Next let's create a player script
+```python
+import pygame
+from stormfield import World
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self, world: World):
+        super().__init__()
+        self.world = world
+
+        self.sprite = pygame.Surface((100, 100))
+        self.sprite.fill((255,0,0))
+
+        self.rect = pygame.FRect(250, 250, 100, 100)
+
+        # Create a phyisics collider
+        self.collider = self.world.addCollider(self.rect, "Player", self, "dynamic", 1000)
+
+        self.speed = 300
+
+    def update(self, dt):
+        keys = pygame.key.get_pressed()
+        dir = pygame.Vector2(0, 0)
+
+        if keys[pygame.K_w]: dir.y -= 1
+        if keys[pygame.K_a]: dir.x -= 1
+        if keys[pygame.K_s]: dir.y += 1
+        if keys[pygame.K_d]: dir.x += 1
+
+        if dir.length() > 0:
+            dir = dir.normalize() * self.speed
+            # Apply linear velocity to rect
+            self.world.setLinearVelocity(self.collider, dir)
+
+    def draw(self, screen: pygame.surface.Surface):
+        screen.blit(self.sprite, self.rect)
 ```
