@@ -1,2 +1,2 @@
 # stormfield
-<img src="logo.png" alt="Alt text" width="500" />
+<img src="logo.png" alt="Alt text" width="1000" />
