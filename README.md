@@ -4,6 +4,11 @@
 
 <img src="assets/logo.png" alt="Alt text" width="1000" />
 
+# Contents
+- [Instalation](#instalation)
+- [Quick Start](#quick-start)
+  - [Create a world](#create-a-world)
+  - [Create colliders](#create-colliders)
 
 ## Instalation
 ```bash
@@ -26,7 +31,7 @@ A physics world can be created similarly to windfield
 world = World(pygame.Vector2(0, 500))
 ```
 
-# Create collider
+# Create colliders
 A collider is a single object that attaches to your sprite
 ```python
 box = world.newRectangleCollider(300, 350, 100, 100)
