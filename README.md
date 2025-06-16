@@ -142,3 +142,92 @@ world.destroy()
 -----
 
 ## Rectangle Collider
+
+### `.setLinearVelocity(velocity)`
+Sets the linear velocity vector of the collider. This controls how fast and in what direction the collider moves each frame.
+```python
+collider.setLinearVelocity(pygame.Vector2(100, 0))
+```
+Arguments:
+- `velocity` `(pygame.Vector2)` — The velocity vector to apply.
+
+-----
+
+### `.applyLinearImpulse(impulse)`
+Applies an instantaneous impulse to the collider, changing its velocity immediately based on the impulse and the collider’s mass. Only affects colliders of type "dynamic".
+```python
+collider.applyLinearImpulse(pygame.Vector2(0, 500))
+```
+
+Arguments:
+- `impulse` `(pygame.Vector2)` — The impulse vector to apply.
+
+-----
+
+### `.setFriction(friction)`
+Sets the friction coefficient for the collider, which slows it down over time when moving.
+```python
+collider.setFriction(0.5)
+```
+
+Arguments:
+- `friction` `(float)` — The friction value. Higher values mean more friction.
+
+-----
+
+### `.setMass(mass)`
+Sets the mass of the collider, which affects how impulses change its velocity.
+```python
+collider.setMass(2.0)
+```
+
+Arguments:
+- `mass` `(float)` — The mass value (must be positive).
+
+-----
+
+### `.setRestitution(restitution)`
+Sets the restitution (bounciness) of the collider. Determines how much velocity is retained after collisions.
+```python
+collider.setRestitution(0.8)
+```
+
+Arguments:
+- restitution (float) — A value between 0 (no bounce) and 1 (perfect bounce).
+
+-----
+
+### `.setType(type)`
+Sets the physics type of the collider. Types control whether the collider moves and how:
+
+"static" — Does not move and does not respond to forces.
+"dynamic" — Moves according to velocity, forces, and collisions.
+"kinematic" — Moves only via velocity but does not respond to forces or collisions.
+```python
+collider.setType("static")
+```
+
+Arguments:
+- `type` `(str)` — One of "static", "dynamic", or "kinematic".
+
+-----
+
+### `.setObject(obj)`
+Associates a custom Python object with the collider, usually the game entity or sprite it belongs to. Useful for accessing your entity during collision callbacks.
+```python
+collider.setObject(player)
+```
+
+Arguments:
+- `obj` `(any)` — Your custom object reference.
+
+-----
+
+### `.setCollisionClass(name)`
+Assigns a collision class to the collider to manage which other colliders it can interact with.
+```python
+collider.setCollisionClass("Player")
+```
+
+Arguments:
+- `name` `(str)` — The name of the collision class.
