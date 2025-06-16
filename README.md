@@ -263,7 +263,7 @@ collider.setType("static")
 ```
 
 Arguments:
-- `type` `(str)` — One of "static", "dynamic", or "kinematic". Defaults to `dynamic`
+- `type` `(str)` — One of 'static', 'dynamic', or 'kinematic'. Defaults to `dynamic`
 
 -----
 
