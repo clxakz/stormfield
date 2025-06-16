@@ -52,12 +52,17 @@ place the `stormfield` folder inside your project and import it:
 ```python
 from stormfield import World
 ```
+<br/>
+<br/>
 
 # Create a world
 A physics world can be created similarly to windfield
 ```python
 world = World(pygame.Vector2(0, 500))
 ```
+
+<br/>
+<br/>
 
 # Create colliders
 A `collider` is an object that handles collision detection and can be attached to your game entities or sprites.
@@ -96,6 +101,9 @@ Arguments:
 
 -----
 
+<br/>
+<br/>
+
 ### `.addCollisionClass(name, ignores)`
 A `collision class` is a way to group colliders and control which objects should interact with each other.
 You can assign a collision class to each collider, and configure which classes should ignore collisions with others. This allows you to easily manage complex collision relationships without writing custom logic for every case.
@@ -113,6 +121,9 @@ Arguments:
 
 -----
 
+<br/>
+<br/>
+
 ### `.draw(screen, color, width)`
 The draw() function allows you to quickly visualize all colliders in the world by drawing their shapes on the screen using pygame.draw.rect().
 This is mainly useful for debugging and development purposes.
@@ -126,6 +137,9 @@ Arguments:
 - `width` `(int)` - The width of the outline
 
 -----
+
+<br/>
+<br/>
 
 ### `.newRectangleCollider(x, y, width, height)`
 Creates a new rectangle collider and automatically adds it to the world.
@@ -141,6 +155,9 @@ Arguments:
 
 -----
 
+<br/>
+<br/>
+
 ### `.destroy()`
 The destroy() function will clear all colliders, collision classes and resets the gravity.
 ```python
@@ -148,6 +165,9 @@ world.destroy()
 ```
 
 -----
+
+<br/>
+<br/>
 
 ## Rectangle Collider
 
@@ -161,6 +181,9 @@ Arguments:
 
 -----
 
+<br/>
+<br/>
+
 ### `.applyLinearImpulse(impulse)`
 Applies an instantaneous impulse to the collider, changing its velocity immediately based on the impulse and the collider’s mass. Only affects colliders of type "dynamic".
 ```python
@@ -171,6 +194,9 @@ Arguments:
 - `impulse` `(pygame.Vector2)` — The impulse vector to apply.
 
 -----
+
+<br/>
+<br/>
 
 ### `.setFriction(friction)`
 Sets the friction coefficient for the collider, which slows it down over time when moving.
@@ -183,6 +209,9 @@ Arguments:
 
 -----
 
+<br/>
+<br/>
+
 ### `.setMass(mass)`
 Sets the mass of the collider, which affects how impulses change its velocity.
 ```python
@@ -194,6 +223,9 @@ Arguments:
 
 -----
 
+<br/>
+<br/>
+
 ### `.setRestitution(restitution)`
 Sets the restitution (bounciness) of the collider. Determines how much velocity is retained after collisions.
 ```python
@@ -204,6 +236,9 @@ Arguments:
 - restitution (float) — A value between 0 (no bounce) and 1 (perfect bounce).
 
 -----
+
+<br/>
+<br/>
 
 ### `.setType(type)`
 Sets the physics type of the collider. Types control whether the collider moves and how:
@@ -222,6 +257,9 @@ Arguments:
 
 -----
 
+<br/>
+<br/>
+
 ### `.setObject(obj)`
 Associates a custom object with the collider, usually the game entity or sprite it belongs to. Useful for accessing your entity during collision callbacks.
 ```python
@@ -232,6 +270,9 @@ Arguments:
 - `obj` `(any)` — Your custom object reference. Defaults to `self`
 
 -----
+
+<br/>
+<br/>
 
 ### `.setCollisionClass(name)`
 Assigns a collision class to the collider to manage which other colliders it can interact with.
