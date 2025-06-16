@@ -4,6 +4,12 @@
 
 <img src="assets/logo.png" alt="Alt text" width="1000" />
 
+> [!NOTE]
+> `Stormfield` is still in development, some expected features may not be present.
+
+> [!IMPORTANT]
+> The main reason i created `stormfield` was to easily manage collisions and collision classes, **NOT** to handle full physics — although some physics features are present.
+
 # Contents
 - [Instalation](#instalation)
 - [Quick Start](#quick-start)
