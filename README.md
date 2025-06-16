@@ -61,15 +61,11 @@ place the `stormfield` folder inside your project and import it:
 from stormfield import World
 ```
 
-<br/>
-
 # Create a world
 A physics world can be created similarly to windfield
 ```python
 world = World(pygame.Vector2(0, 500))
 ```
-
-<br/>
 
 # Create colliders
 A `collider` is an object that handles collision detection and can be attached to your game entities or sprites.
