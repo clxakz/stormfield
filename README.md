@@ -190,7 +190,7 @@ Sets the linear velocity vector of the collider. This controls how fast and in w
 collider.setLinearVelocity(pygame.Vector2(100, 0))
 ```
 Arguments:
-- `velocity` `(pygame.Vector2)` — The velocity vector to apply.
+- `velocity` `(pygame.Vector2)` - The velocity vector to apply.
 
 -----
 
@@ -204,7 +204,7 @@ collider.applyLinearImpulse(pygame.Vector2(0, 500))
 ```
 
 Arguments:
-- `impulse` `(pygame.Vector2)` — The impulse vector to apply.
+- `impulse` `(pygame.Vector2)` - The impulse vector to apply.
 
 -----
 
@@ -218,7 +218,7 @@ collider.setFriction(0.5)
 ```
 
 Arguments:
-- `friction` `(float)` — The friction value.
+- `friction` `(float)` - The friction value.
 
 -----
 
@@ -232,7 +232,7 @@ collider.setMass(2.0)
 ```
 
 Arguments:
-- `mass` `(float)` — The mass value (must be positive).
+- `mass` `(float)` - The mass value (must be positive).
 
 -----
 
@@ -246,7 +246,7 @@ collider.setRestitution(0.8)
 ```
 
 Arguments:
-- restitution (float) — A value between 0 (no bounce) and 1 (perfect bounce).
+- restitution (float) - A value between 0 (no bounce) and 1 (perfect bounce).
 
 -----
 
@@ -266,7 +266,7 @@ collider.setType("static")
 ```
 
 Arguments:
-- `type` `(str)` — One of 'static', 'dynamic', or 'kinematic'. Defaults to `dynamic`
+- `type` `(str)` - One of 'static', 'dynamic', or 'kinematic'. Defaults to `dynamic`
 
 -----
 
@@ -281,7 +281,7 @@ collider.setObject(player)
 ```
 
 Arguments:
-- `obj` `(any)` — Your custom object reference. Defaults to `self`
+- `obj` `(any)` - Your custom object reference. Defaults to `self`
 
 -----
 
@@ -295,7 +295,7 @@ collider.setCollisionClass("Player")
 ```
 
 Arguments:
-- `name` `(str)` — The name of the collision class.
+- `name` `(str)` - The name of the collision class.
 
 -----
 
