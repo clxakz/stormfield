@@ -58,7 +58,7 @@ place the `stormfield` folder inside your project and import it:
 ```python
 from stormfield import World
 ```
-<br/>
+
 <br/>
 
 # Create a world
@@ -67,7 +67,6 @@ A physics world can be created similarly to windfield
 world = World(pygame.Vector2(0, 500))
 ```
 
-<br/>
 <br/>
 
 # Create colliders
@@ -90,7 +89,12 @@ And that looks like this: <br/>
 
 -----
 
+<br/>
+<br/>
+
 # Documentation
+
+<br/>
 
 ## World
 ### `World(gravity)`
