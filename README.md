@@ -10,11 +10,19 @@
 > [!IMPORTANT]
 > The main reason i created `stormfield` was to easily manage collisions and collision classes, **NOT** to handle full physics — although some physics features are present.
 
+-----
+
 # Contents
 - [Instalation](#instalation)
 - [Quick Start](#quick-start)
   - [Create a world](#create-a-world)
   - [Create colliders](#create-colliders)
+- [Documentation](#documentation)
+    - [World](#worldgravity)
+      - [Collision classes](#addcollisionclassname-ignores)
+      - [Draw](#drawscreen-color-width)
+
+-----
 
 ## Instalation
 ```bash
@@ -24,6 +32,8 @@ or
 ```bash
 pip install stormfield
 ```
+
+-----
 
 # Quick Start
 place the `stormfield` folder inside your project and import it:
@@ -38,7 +48,7 @@ world = World(pygame.Vector2(0, 500))
 ```
 
 # Create colliders
-A collider is a single object that attaches to your sprite
+A `collider` is an object that handles collision detection and can be attached to your game entities or sprites.
 ```python
 box = world.newRectangleCollider(300, 350, 100, 100)
 box.setRestitution(0.8)
@@ -51,6 +61,67 @@ ground.setType("static") # <- Types can be 'static', 'dynamic' or 'kinematic'. D
 world.update(dt)
 world.draw(screen) # <- The world can be drawn for debugging purposes
 ```
-And that looks like this <br/>
+And that looks like this: <br/>
 
 <img src="assets/demo1.gif" alt="Alt text" width="500" />
+
+-----
+
+# Documentation
+
+### `World(gravity)`
+The `World` class is the core of the Stormfield collision system.
+It manages all `colliders`, updates their positions, resolves collisions, and handles collision class logic.
+
+`Stormfield’s World` object is inspired by the `windfield` library in LÖVE2D, focusing on ease of use and flexibility for collision handling in Pygame.
+```python
+world = World(pygame.Vector2(0, 500))
+```
+
+Arguments:
+- `gravity` `(pygame.Vector2)` - The gravity for all of your collider objects
+
+-----
+
+### `.addCollisionClass(name, ignores)`
+A `collision class` is a way to group colliders and control which objects should interact with each other.
+You can assign a collision class to each collider, and configure which classes should ignore collisions with others. This allows you to easily manage complex collision relationships without writing custom logic for every case.
+```python
+world.addCollisionClass("Player")
+world.addCollisionClass("Enemies", ["Walls"]) # <- The enemy class will ignore all objects in the 'Walls' class
+world.addCollisionClass("Walls")
+
+collider.setCollisionClass("Player") # <- Assigns a collision class to your object
+```
+
+Arguments:
+- `name` `(str)` - The name of a collision class
+- `ignores` `(list[str])` - A list of other classes a class should ignore
+
+-----
+
+### `.draw(screen, color, width)`
+The draw() function allows you to quickly visualize all colliders in the world by drawing their shapes on the screen using pygame.draw.rect().
+This is mainly useful for debugging and development purposes.
+```python
+world.draw(screen, (255,255,255), 1)
+```
+
+Arguments:
+- `screen` `(pygame.Surface)` - The surface where all colliders should be drawn
+- `color` `(tuple)` - RGB color of the outline
+- `width` `(int)` - The width of the outline
+
+-----
+
+### `.newRectangleCollider(x, y, width, height)`
+Creates a new rectangle collider and automatically adds it to the world.
+```python
+box = world.newRectangleCollider(0, 0, 100, 100)
+```
+
+Arguments:
+- `x` `(int)` - The X position of a rectangle collider
+- `y` `(int)` - The Y position of a rectangle collider
+- `width` `(int)` - The width of a rectangle collider
+- `height` `(int)` - The height of a rectangle collider
