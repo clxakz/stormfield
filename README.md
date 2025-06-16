@@ -18,9 +18,13 @@
   - [Create a world](#create-a-world)
   - [Create colliders](#create-colliders)
 - [Documentation](#documentation)
-    - [World](#worldgravity)
+    - [World](#world)
+      - [New World](#worldgravity)
       - [Collision classes](#addcollisionclassname-ignores)
       - [Draw](#drawscreen-color-width)
+      - [New Rectangle Collider](#newrectanglecolliderx-y-width-height)
+      - [Destroy](#destroy)
+    - [Rectangle Collider](#rectangle-collider)
 
 -----
 
@@ -69,6 +73,7 @@ And that looks like this: <br/>
 
 # Documentation
 
+## World
 ### `World(gravity)`
 The `World` class is the core of the Stormfield collision system.
 It manages all `colliders`, updates their positions, resolves collisions, and handles collision class logic.
@@ -121,7 +126,19 @@ box = world.newRectangleCollider(0, 0, 100, 100)
 ```
 
 Arguments:
-- `x` `(int)` - The X position of a rectangle collider
-- `y` `(int)` - The Y position of a rectangle collider
-- `width` `(int)` - The width of a rectangle collider
-- `height` `(int)` - The height of a rectangle collider
+- `x` `(int)` - The X position of the collider
+- `y` `(int)` - The Y position of the collider
+- `width` `(int)` - The width of the collider
+- `height` `(int)` - The height of the collider
+
+-----
+
+### `.destroy()`
+The destroy() function will clear all colliders, collision classes and resets the gravity.
+```python
+world.destroy()
+```
+
+-----
+
+## Rectangle Collider
