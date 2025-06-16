@@ -56,7 +56,7 @@ pip install stormfield
 <br/>
 
 # Quick Start
-place the `stormfield` folder inside your project and import it:
+place the `stormfield` folder inside your project and import it
 ```python
 from stormfield import World
 ```
