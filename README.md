@@ -312,7 +312,7 @@ collider.setOnCollisionEnterFunc(on_enter)
 ```
 
 Arguments:
-- `function` `function` - The function that should be assigned.
+- `function` `(function)` - The function that should be assigned.
 
 -----
 
@@ -329,7 +329,7 @@ collider.setOnCollisionExitFunc(on_exit)
 ```
 
 Arguments:
-- `function` `function` - The function that should be assigned.
+- `function` `(function)` - The function that should be assigned.
 
 -----
 
@@ -346,4 +346,4 @@ collider.setOnCollisionStayFunc(on_stay)
 ```
 
 Arguments:
-- `function` `function` - The function that should be assigned.
+- `function` `(function)` - The function that should be assigned.
