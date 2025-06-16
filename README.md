@@ -214,7 +214,7 @@ Arguments:
 ### `.setFriction(friction)`
 Sets the friction coefficient for the collider, which slows it down over time when moving.
 ```python
-collider.setFriction(0.5)
+collider.setFriction(200)
 ```
 
 Arguments:
