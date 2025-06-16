@@ -25,6 +25,14 @@
       - [New Rectangle Collider](#newrectanglecolliderx-y-width-height)
       - [Destroy](#destroy)
     - [Rectangle Collider](#rectangle-collider)
+      - [Set Linear Velocity](#setlinearvelocityvelocity)
+      - [Apply Linear Impluse](#applylinearimpulseimpulse)
+      - [Set Friction](#setfrictionfriction)
+      - [Set Mass](#setmassmass)
+      - [Set Restitution](#setrestitutionrestitution)
+      - [Set Type](#settypetype)
+      - [Set Object](#setobjectobj)
+      - [Set Collision Class](#setcollisionclassname)
 
 -----
 
