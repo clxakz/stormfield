@@ -2,7 +2,7 @@
 **Stormfield aims to partially recreate Love2D's windfield physics library.** <br/>
 **The main idea behind it is to easily intergrate collisions in your game**
 
-<img src="logo.png" alt="Alt text" width="1000" />
+<img src="assets/logo.png" alt="Alt text" width="1000" />
 
 
 ## Instalation
@@ -37,7 +37,9 @@ ground = world.newRectangleCollider(100, 600, 600, 100)
 ground.setType("static") # <- Types can be 'static', 'dynamic' or 'kinematic'. Defaults to 'dynamic'
 
 # In your main loop
+world.update(dt)
 world.draw(screen) # <- The world can be drawn for debugging purposes
 ```
-And that looks like this
+And that looks like this <br/>
 
+<img src="assets/demo1.gif" alt="Alt text" width="500" />
