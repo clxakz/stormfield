@@ -62,13 +62,15 @@ from stormfield import World
 ```
 
 # Create a world
-A physics world can be created similarly to windfield
+A physics `World` can be created similarly to windfield.
+Create a `World` with vertical gravity 500.
 ```python
 world = World(pygame.Vector2(0, 500))
 ```
 
 # Create colliders
 A `collider` is an object that handles collision detection and can be attached to your game entities or sprites.
+Create a box `collider` and a ground `collider`, apply a linear impulse to the box. The box collides with the ground and bounces.
 ```python
 box = world.newRectangleCollider(300, 350, 100, 100)
 box.setRestitution(0.8)
