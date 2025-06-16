@@ -2,7 +2,7 @@
 **Stormfield aims to partially recreate Love2D's windfield physics library.** <br/>
 **The main idea behind it is to easily intergrate collisions in your game**
 
-<img src="assets/logo.png" alt="Alt text" width="1000" />
+
 
 > [!NOTE]
 > `Stormfield` is still in development, some expected features may not be present.
