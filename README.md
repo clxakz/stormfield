@@ -69,7 +69,6 @@ world = World(pygame.Vector2(0, 500))
 ```
 
 # Create colliders
-A `collider` is an object that handles collision detection and can be attached to your game entities or sprites. <br/>
 Create a box `collider` and a ground `collider`, apply a linear impulse to the box. The box collides with the ground and bounces.
 ```python
 box = world.newRectangleCollider(300, 350, 100, 100)
@@ -180,6 +179,7 @@ world.destroy()
 <br/>
 
 ## Rectangle Collider
+A `collider` is an object that handles collision detection and can be attached to your game entities or sprites.
 
 ### `.setLinearVelocity(velocity)`
 Sets the linear velocity vector of the collider. This controls how fast and in what direction the collider moves each frame.
