@@ -272,6 +272,7 @@ Arguments:
 
 ### `.setObject(obj)`
 Associates a custom object with the collider, usually the game entity or sprite it belongs to. Useful for accessing your entity during collision callbacks.
+Basically this is what gets returned when retrieving collision data which usually you want to be self.
 ```python
 collider.setObject(player)
 ```
