@@ -39,3 +39,5 @@ ground.setType("static") # <- Types can be 'static', 'dynamic' or 'kinematic'. D
 # In your main loop
 world.draw(screen) # <- The world can be drawn for debugging purposes
 ```
+And that looks like this
+
