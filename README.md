@@ -1,8 +1,8 @@
 <img src="assets/logo.png" alt="Alt text" width="1000" />
 
 # Stormfield - A Pygame Library
-**Stormfield aims to partially recreate Love2D's windfield physics library.** <br/>
-**The main idea behind it is to easily intergrate collisions in your game**
+> **Stormfield aims to partially recreate Love2D's windfield physics library.** <br/>
+> **The main idea behind it is to easily intergrate collisions in your game**
 
 
 
