@@ -35,6 +35,9 @@
       - [Type](#settypetype)
       - [Object](#setobjectobj)
       - [Collision Class](#setcollisionclassname)
+      - [On Collision Enter](#setoncollisionenterfuncfunction)
+      - [On Collision Exit](#setoncollisionexitfuncfunction)
+      - [On Collision Stay](#setoncollisionstayfuncfunction)
 
 -----
 
@@ -293,3 +296,54 @@ collider.setCollisionClass("Player")
 
 Arguments:
 - `name` `(str)` — The name of the collision class.
+
+-----
+
+<br/>
+<br/>
+
+### `.setOnCollisionEnterFunc(function)`
+Assings a function to the onCollisionEnter event.
+```python
+def on_enter(obj):
+  print(obj)
+
+collider.setOnCollisionEnterFunc(on_enter)
+```
+
+Arguments:
+- `function` `function` - The function that should be assigned.
+
+-----
+
+<br/>
+<br/>
+
+### `.setOnCollisionExitFunc(function)`
+Assings a function to the onCollisionExit event.
+```python
+def on_exit(obj):
+  print(obj)
+
+collider.setOnCollisionExitFunc(on_exit)
+```
+
+Arguments:
+- `function` `function` - The function that should be assigned.
+
+-----
+
+<br/>
+<br/>
+
+### `.setOnCollisionStayFunc(function)`
+Assings a function to the onCollisionStay event.
+```python
+def on_stay(obj):
+  print(obj)
+
+collider.setOnCollisionStayFunc(on_stay)
+```
+
+Arguments:
+- `function` `function` - The function that should be assigned.
