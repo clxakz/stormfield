@@ -179,7 +179,7 @@ collider.setFriction(0.5)
 ```
 
 Arguments:
-- `friction` `(float)` — The friction value. Higher values mean more friction.
+- `friction` `(float)` — The friction value.
 
 -----
 
@@ -208,26 +208,28 @@ Arguments:
 ### `.setType(type)`
 Sets the physics type of the collider. Types control whether the collider moves and how:
 
-"static" — Does not move and does not respond to forces.
-"dynamic" — Moves according to velocity, forces, and collisions.
-"kinematic" — Moves only via velocity but does not respond to forces or collisions.
+| Type      | Affected by Gravity | Affected by Velocity | Moves? | Use Case |
+|-----------|---------------------|-----------------------|--------|----------|
+| dynamic   | ✅Yes                 | ✅Yes                   | ✅Yes    | Fully simulated objects like players, enemies, projectiles. |
+| kinematic | 🚫No                  | ✅Yes (manual)          | ✅Yes    | Moving platforms, doors, scripted movement (you set velocity manually). |
+| static    | 🚫No                  | 🚫No                    | 🚫No     | Walls, floors, anything that doesn't move. |
 ```python
 collider.setType("static")
 ```
 
 Arguments:
-- `type` `(str)` — One of "static", "dynamic", or "kinematic".
+- `type` `(str)` — One of "static", "dynamic", or "kinematic". Defaults to `dynamic`
 
 -----
 
 ### `.setObject(obj)`
-Associates a custom Python object with the collider, usually the game entity or sprite it belongs to. Useful for accessing your entity during collision callbacks.
+Associates a custom object with the collider, usually the game entity or sprite it belongs to. Useful for accessing your entity during collision callbacks.
 ```python
 collider.setObject(player)
 ```
 
 Arguments:
-- `obj` `(any)` — Your custom object reference.
+- `obj` `(any)` — Your custom object reference. Defaults to `self`
 
 -----
 
