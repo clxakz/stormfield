@@ -262,11 +262,13 @@ Sets the physics type of the collider. Types control whether the collider moves 
 | kinematic | 🚫No                  | ✅Yes (manual)          | ✅Yes    | Moving platforms, doors, scripted movement (you set velocity manually). |
 | static    | 🚫No                  | 🚫No                    | 🚫No     | Walls, floors, anything that doesn't move. |
 ```python
-collider.setType("static")
+from stormfield import CollisionType
+
+collider.setType(CollisionType.STATIC)
 ```
 
 Arguments:
-- `type` `(str)` - One of 'static', 'dynamic', or 'kinematic'. Defaults to `dynamic`
+- `type` `(str)` - One of 'STATIC', 'DYNAMIC', or 'KINEMATIC'. Defaults to `DYNAMIC`
 
 -----
 
