@@ -36,7 +36,7 @@ class RectangleCollider():
         self.rect = pygame.FRect(x, y, width, height)
         self.velocity = pygame.Vector2(0, 0)
         self.friction = 0
-        self.type: ColliderType.DYNAMIC
+        self.type: ColliderType = ColliderType.DYNAMIC
 
         self.mass = 1.0
         self.restitution = 0.0
