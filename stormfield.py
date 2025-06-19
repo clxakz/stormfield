@@ -43,6 +43,7 @@ class RectangleCollider():
 
         self._object = self
         self.colliding_with = set()
+        self.is_sensor = False
         
         # Callback placeholders
         self.onCollisionEnter = None
@@ -50,6 +51,12 @@ class RectangleCollider():
         self.onCollisionStay = None
 
         self.collision_class = None
+
+        self._destroyed = False
+
+    
+    def destroy(self) -> None:
+        self._destroyed = True
 
 
     def setLinearVelocity(self, velocity: pygame.Vector2) -> None:
@@ -104,6 +111,10 @@ class RectangleCollider():
 
     def setCollisionClass(self, name) -> None:
         self.collision_class = name
+
+
+    def setSensor(self, is_sensor: bool) -> None:
+        self.is_sensor = is_sensor
 
 
     def _update(self, dt, gravity) -> None:
@@ -168,6 +179,8 @@ class World():
     
 
     def update(self, dt) -> None:
+        self.colliders = [c for c in self.colliders if not c._destroyed]
+
         for collider in self.colliders:
             collider._update(dt, self.gravity)
 
@@ -222,6 +235,9 @@ class World():
 
             
     def __separate(self, a, b) -> None:
+        if a.is_sensor or b.is_sensor:
+            return
+
         if a.type == ColliderType.STATIC and b.type == ColliderType.STATIC:
             return
 

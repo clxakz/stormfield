@@ -40,6 +40,8 @@
       - [On Collision Enter](#setoncollisionenterfuncfunction)
       - [On Collision Exit](#setoncollisionexitfuncfunction)
       - [On Collision Stay](#setoncollisionstayfuncfunction)
+      - [Sensor](#setsensoris_sensor)
+      - [Destroy](#destroy)
 
 -----
 
@@ -351,3 +353,28 @@ collider.setOnCollisionStayFunc(on_stay)
 
 Arguments:
 - `function` `(function)` - The function that should be assigned.
+
+-----
+
+<br/>
+<br/>
+
+### `.setSensor(is_sensor)`
+When a collider is set as senor it will not collide with any other game object but will trigger onCollisionEnter, Stay and exit events
+```python
+collider.setSensor(True)
+```
+
+Arguments
+- `is_sensor` `(bool)` - Sets the sensor value
+
+-----
+
+<br/>
+<br/>
+
+### `.destroy()`
+Destroys the collider and removes it from the world
+```python
+collider.destroy()
+```
