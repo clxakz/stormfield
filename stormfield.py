@@ -273,20 +273,26 @@ class World():
 
 
     def __distributeMovement(self, a, b, move, axis) -> None:
-        movable_a = (a.type == ColliderType.DYNAMIC)
-        movable_b = (b.type == ColliderType.DYNAMIC)
+        # Check types
+        is_dynamic_a = a.type == ColliderType.DYNAMIC
+        is_dynamic_b = b.type == ColliderType.DYNAMIC
+        is_kinematic_a = a.type == ColliderType.KINEMATIC
+        is_kinematic_b = b.type == ColliderType.KINEMATIC
 
-
-        if movable_a and movable_b:
-                move_a = move / 2
-                move_b = -move / 2
-        elif movable_a:
+        if is_dynamic_a and is_dynamic_b:
+            # Both dynamic → split move
+            move_a = move / 2
+            move_b = -move / 2
+        elif is_dynamic_a and (is_kinematic_b or b.type == ColliderType.STATIC):
+            # a dynamic, b kinematic or static → move a only
             move_a = move
             move_b = 0
-        elif movable_b:
+        elif is_dynamic_b and (is_kinematic_a or a.type == ColliderType.STATIC):
+            # b dynamic, a kinematic or static → move b only
             move_a = 0
             move_b = -move
         else:
+            # both kinematic/static → no movement
             move_a = 0
             move_b = 0
 
