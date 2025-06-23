@@ -273,13 +273,13 @@ class World():
 
 
     def __distributeMovement(self, a, b, move, axis) -> None:
-        movable_a = (a.type != ColliderType.STATIC)
-        movable_b = (b.type != ColliderType.STATIC)
+        movable_a = (a.type == ColliderType.DYNAMIC)
+        movable_b = (b.type == ColliderType.DYNAMIC)
+
 
         if movable_a and movable_b:
-            # both can move
-            move_a = move / 2
-            move_b = -move / 2
+                move_a = move / 2
+                move_b = -move / 2
         elif movable_a:
             move_a = move
             move_b = 0
