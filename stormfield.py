@@ -241,8 +241,8 @@ class World():
         if a.type == ColliderType.STATIC and b.type == ColliderType.STATIC:
             return
 
-        dx = a.rect.centerx - b.rect.centerx
-        dy = a.rect.centery - b.rect.centery
+        dx = b.rect.centerx - a.rect.centerx  # direction a → b
+        dy = b.rect.centery - a.rect.centery
         overlap_x = (a.rect.width + b.rect.width) / 2 - abs(dx)
         overlap_y = (a.rect.height + b.rect.height) / 2 - abs(dy)
 
@@ -256,7 +256,7 @@ class World():
 
         if overlap_x < overlap_y:
             move = overlap_x if dx > 0 else -overlap_x
-            self.__distributeMovement(a, b, move, axis="x")
+            self.__distributeMovement(a, b, -move, axis="x")
 
             if a.type != ColliderType.STATIC:
                 a.velocity.x = apply_bounce(a.velocity.x)
@@ -264,7 +264,7 @@ class World():
                 b.velocity.x = apply_bounce(b.velocity.x)
         else:
             move = overlap_y if dy > 0 else -overlap_y
-            self.__distributeMovement(a, b, move, axis="y")
+            self.__distributeMovement(a, b, -move, axis="y")
 
             if a.type != ColliderType.STATIC:
                 a.velocity.y = apply_bounce(a.velocity.y)

@@ -1,3 +1,7 @@
+> [!WARNING]
+> During development, I encountered a bug that neither I nor ChatGPT could fix.
+> As of now, `stormfield` **is archived and will no longer receive updates**. It will be replaced by a new collision library.
+
 <img src="assets/logo.png" alt="Alt text" width="1000" />
 
 [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
