@@ -1,3 +1,5 @@
+**Checkout [Physer](https://github.com/clxakz/physer). The new updated PyGame collision library.**
+
 > [!WARNING]
 > During development, I encountered a bug that neither I nor ChatGPT could fix.
 > As of now, `stormfield` **is archived and will no longer receive updates**. It will be replaced by a new collision library.
